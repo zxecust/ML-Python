@@ -5,4 +5,4 @@ windows 11
 ## Python 版本
 python 3. 9
 ## 快速访问
-[A byte of python 源代码](https://github.com/zxecust/PythonNotes/tree/main/code)
+[《 A byte of python 》 源代码](https://github.com/zxecust/PythonNotes/tree/main/A_byte_of_Python)
