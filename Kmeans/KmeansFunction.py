@@ -1,11 +1,3 @@
-import numpy as np
-import matplotlib.pyplot as plt
-import pandas as pd
-import seaborn as sb
-import scipy.io as sio
-import os
-from IPython.display import Image
-
 # 找到最近中心点
 def find_closest_centroids(X, centroids):
 	m = X.shape[0] # 确定数据X的维数
@@ -56,29 +48,3 @@ def init_centroids(X, k):
 		centroids[i,:] = X[idx[i],:]
 
 	return centroids
-
-# 设置图像保存路径
-figure_save_path = "images" 
-if not os.path.exists(figure_save_path):
-    os.makedirs(figure_save_path) # 如果不存在目录figure_save_path，则创建
-
-Image(filename = 'data/bird_small.png')
-image_data = sio.loadmat('data/bird_small.mat')
-
-A = image_data['A']
-A = A / 255. # 归一化
-X = np.reshape(A, (A.shape[0] * A.shape[1], A.shape[2]))
-
-initial_centroids = init_centroids(X, 16)
-idx, centroids = run_k_means(X, initial_centroids, 10)
-idx = find_closest_centroids(X, centroids)
-
-X_recovered = centroids[idx.astype(int),:]
-print(X_recovered.shape)
-
-X_recovered = np.reshape(X_recovered, (A.shape[0], A.shape[1], A.shape[2]))
-print(X_recovered.shape)
-
-plt.imshow(X_recovered)
-plt.savefig(os.path.join(figure_save_path, 'X_recovered.png'))
-plt.show()
