@@ -17,7 +17,7 @@ def pca(X):
 	U, S, V = np.linalg.svd(cov)
 
 	return U, S, V
- 
+
 
 # 投影计算
 def project_data(X, U, k):
