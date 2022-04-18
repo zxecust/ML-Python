@@ -21,7 +21,7 @@ def pca(dataMat, topNfeat=9999999):
 
     # 对前N个特征值进行排序
 	eigValInd = argsort(eigVals)
-	eigValInd = eigValInd[:-(topNfeat):-1]
+	eigValInd = eigValInd[:-(topNfeat+1):-1]
 	redEigVects = eigVects[:,eigValInd]
 	lowDDataMat = meanRemoved * redEigVects
 	reconMat = (lowDDataMat * redEigVects.T) +meanVals
