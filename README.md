@@ -5,7 +5,7 @@
 
 - **Python**: python 3. 9
 
-- **Editor**: Sublime Text 4
+- **Editor**: VScode/Sublime Text 4
 
 ## Modules
 
