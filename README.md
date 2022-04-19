@@ -22,3 +22,19 @@
 - svm
 
 - os
+ 
+ ## Description
+ 
+ This repository stores python code that I wrote while learning Machine Learning.
+ 
+ ## Reference
+ 
+ ### Machine Learning
+ 
+ - Machine Learning on coursera
+ - 《Machine Learning in action》
+ - 《机器学习》 周志华
+
+### Python
+
+- 《A Byte of Python》 
