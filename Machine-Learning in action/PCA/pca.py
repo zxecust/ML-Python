@@ -24,3 +24,13 @@ def pca(dataMat, topNfeat=9999999):
 	lowDDataMat = meanRemoved * redEigVects
 	reconMat = (lowDDataMat * redEigVects.T) +meanVals
 	return lowDDataMat, reconMat
+
+def replaceNanWithMean():
+    datMat = loadDataSet('data/secom.data',' ')
+    numFeat = shape(datMat)[1]
+    for i in range(numFeat):
+        meanVal = mean(datMat[nonzero(~isnan(datMat[:,i].A))[0],i]) # 找到不是Nan数据的平均值
+
+        datMat[nonzero(isnan(datMat[:,i].A))[0],i] = meanVal # 将Nan的数值设置为平均值
+
+    return datMat
