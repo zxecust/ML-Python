@@ -2,7 +2,7 @@ import pandas as pd
 from scipy.io import loadmat
 
 
-mat_data_folder = 'data'
+mat_data_folder = ''
 battery_idx = 'B0007'
 mat_data = loadmat(mat_data_folder + battery_idx)[battery_idx]
 # mat_data = loadmat(mat_data_folder + 'B0005.mat')['B0005']
@@ -18,12 +18,9 @@ def to_df(mat_db):
 
     # Features monitored during the cycle
     features_cols = {
-        'charge': ['Voltage_measured', 'Current_measured', 'Temperature_measured',
-                   'Current_charge', 'Voltage_charge', 'Time'],
-        'discharge': ['Voltage_measured', 'Current_measured', 'Temperature_measured',
-                      'Current_charge', 'Voltage_charge', 'Time', 'Capacity'],
-        'impedance': ['Sense_current', 'Battery_current', 'Current_ratio',
-                      'Battery_impedance', 'Rectified_impedance', 'Re', 'Rct']
+        'charge': ['Voltage_measured', 'Current_measured', 'Temperature_measured','Current_charge', 'Voltage_charge', 'Time'],
+        'discharge': ['Voltage_measured', 'Current_measured', 'Temperature_measured','Current_charge', 'Voltage_charge', 'Time', 'Capacity'],
+        'impedance': ['Sense_current', 'Battery_current', 'Current_ratio','Battery_impedance', 'Rectified_impedance', 'Re', 'Rct']
     }
 
     # Define one pd.DataFrame per cycle type
